@@ -1,0 +1,28 @@
+<!--pages/shop-manage/index/index.wxml-->
+
+<view class="shop-manage">
+	<van-button type="primary" block color="#2499f2" icon="add-o" bindtap="onCreateShop">创建门店</van-button>
+	<view class="label">门店列表</view>
+
+	<view class="main-shop">
+		<view class="list" wx:if="{{shops.length}}">
+			<block wx:for="{{shops}}" wx:key="_id">
+				<view class="item" bindtap="onItemTap" data-id="{{item._id}}">
+					<view class="image-wrapper">
+						<image src="{{item.url}}" mode="aspectFill" />
+					</view>
+					<view class="info">
+						<view class="shop-name">
+							{{item.shopName}}
+						</view>
+						<view class="address line-ellipsis">
+							{{item.shopDesc}}
+						</view>
+					</view>
+				</view>
+			</block>
+		</view>
+
+		<van-empty description="暂无门店" wx:else/>
+	</view>
+</view>

@@ -1,0 +1,38 @@
+<view class="main">
+	<block wx:for="{{ list }}" wx:key="_id">
+		<van-collapse value="{{ activeNames }}" bind:change="onCollapseChange">
+			<van-collapse-item title="{{ item.shopName }}" name="{{ index }}">
+				<view class="wrapper">
+					<view class="list">
+						<block wx:for="{{ item.hairstylist }}" wx:key="_id">
+							<view class="item">
+								<van-image width="70rpx" height="70rpx" radius="10rpx" fit="fill" src="{{ item.url }}" custom-class="image" />
+								<text class="name">{{ item.hairstylistName }}</text>
+
+								<view class="control">
+									<van-icon name="more-o" color="#1490eb" size="60rpx" bindtap="onDetailUser" data-info="{{ item }}" />
+								</view>
+							</view>
+						</block>
+					</view>
+				</view>
+			</van-collapse-item>
+		</van-collapse>
+	</block>
+</view>
+
+
+<van-popup show="{{show}}" round position="bottom" bind:close="onProjectClose">
+	<van-nav-bar
+		title="作品"
+		left-text="取消"
+		right-text="保存"
+		bind:click-left="onCancel"
+		bind:click-right="onSave"
+		custom-class="nav-bar"
+	/>
+
+	<view class="popup-form">
+		<van-uploader file-list="{{ imgList }}" bind:after-read="afterRead" bind:delete="onDelete" preview-size="100px"/>
+	</view>
+</van-popup>

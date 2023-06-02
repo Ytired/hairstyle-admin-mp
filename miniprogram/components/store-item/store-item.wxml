@@ -1,0 +1,13 @@
+<view class="store-item" bindtap="onItemTap">
+	<view class="image-wrapper">
+		<image src="{{shopData.imgList[0].url}}" mode="aspectFill" />
+	</view>
+	<view class="info">
+		<view class="shop-name">
+			{{ shopData.title }}
+		</view>
+		<view class="address line-ellipsis">
+			{{ shopData.content }}
+		</view>
+	</view>
+</view>

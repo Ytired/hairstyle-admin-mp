@@ -1,0 +1,21 @@
+{
+	"navigationBarTitleText": "门店编辑",
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white",
+	"usingComponents": {
+		"van-field": "@vant/weapp/field/index",
+		"van-area": "@vant/weapp/area/index",
+		"van-popup": "@vant/weapp/popup/index",
+		"van-uploader": "@vant/weapp/uploader/index",
+		"van-cell": "@vant/weapp/cell/index",
+		"van-collapse": "@vant/weapp/collapse/index",
+		"van-collapse-item": "@vant/weapp/collapse-item/index",
+		"van-button": "@vant/weapp/button/index",
+		"van-image": "@vant/weapp/image/index",
+		"van-nav-bar": "@vant/weapp/nav-bar/index",
+		"van-checkbox": "@vant/weapp/checkbox/index",
+		"van-checkbox-group": "@vant/weapp/checkbox-group/index",
+		"van-empty": "@vant/weapp/empty/index",
+		"van-divider": "@vant/weapp/divider/index"
+	}
+}

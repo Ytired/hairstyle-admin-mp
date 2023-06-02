@@ -1,0 +1,23 @@
+<!--pages/login/login.wxml-->
+<view class="login-container">
+	<view class="login-main">
+		<view class="pic">
+			<van-icon name="fire" />
+		</view>
+		<text class="title">后台管理系统</text>
+		<view class="divider"></view>
+		<view class="form-group">
+			<view class="label">账号:</view>
+			<input type="text" placeholder="请输入账号" model:value="{{ account }}"/>
+		</view>
+		<view class="divider"></view>
+		<view class="form-group">
+			<view class="label">密码:</view>
+			<input type="password" placeholder="请输入密码" model:value="{{ password }}"/>
+		</view>
+
+		<button class="login-btn" bindtap="onLogin">登录</button>
+	</view>
+</view>
+
+<van-notify id="van-notify" />

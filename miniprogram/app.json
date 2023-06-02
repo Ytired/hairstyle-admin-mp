@@ -1,0 +1,24 @@
+{
+	"pages": [
+		"pages/login/login",
+		"pages/index/index",
+		"pages/shop-manage/index/index",
+		"pages/shop-manage/edit/edit",
+		"pages/appointment-list/appointment-list",
+		"pages/image-manage/index",
+		"pages/works-manage/works-manage",
+		"pages/publish-manage/publish-manage"
+	],
+	"usingComponents": {
+		"van-icon": "@vant/weapp/icon/index",
+		"van-notify": "@vant/weapp/notify/index"
+	},
+	"window": {
+		"backgroundColor": "#F6F6F6",
+		"backgroundTextStyle": "light",
+		"navigationBarBackgroundColor": "#F6F6F6",
+		"navigationBarTitleText": "后台管理",
+		"navigationBarTextStyle": "black"
+	},
+	"sitemapLocation": "sitemap.json"
+}

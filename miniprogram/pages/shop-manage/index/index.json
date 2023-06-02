@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "店铺管理",
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white",
+	"usingComponents": {
+		"van-button": "@vant/weapp/button/index",
+		"van-empty": "@vant/weapp/empty/index"
+	}
+}

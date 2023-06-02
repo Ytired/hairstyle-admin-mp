@@ -1,0 +1,9 @@
+{
+	"navigationBarTitleText": "图片管理",
+	"navigationBarBackgroundColor": "#2499f2",
+	"navigationBarTextStyle": "white",
+	"usingComponents": {
+		"van-uploader": "@vant/weapp/uploader/index",
+		"van-button": "@vant/weapp/button/index"
+	}
+}

@@ -1,0 +1,114 @@
+/* pages/shop-manage/edit/edit.wxss */
+.shop-edit {
+  height: 100%;
+  padding: 20rpx 20rpx 140rpx 20rpx;
+
+  .form {
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .list {
+        width: 100%;
+        margin-bottom: 20rpx;
+        .item {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          border-bottom: 1px solid #e8eaee;
+					padding: 10rpx;
+					box-sizing: border-box;
+
+					&.project {
+						padding: 20rpx;
+					}
+					
+					.image {
+            margin-right: 10px;
+					}
+
+          .name {
+            color: #000;
+            font-size: 30rpx;
+            font-weight: 500;
+          }
+
+					.price {
+						margin-left: 10px;
+						color: red;
+						font-weight: 500;
+					}
+
+          .control {
+            margin-left: auto;
+            width: 150rpx;
+            display: flex;
+            justify-content: space-between;
+          }
+        }
+      }
+    }
+  }
+}
+
+.uploaderBox {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 20rpx 32rpx;
+	background-color: #fff;
+	border-bottom: 1px solid #f1f1f1;
+
+	text {
+		color: #646566;
+		font-size: 28rpx;
+		margin-right: 40rpx;
+	}
+}
+
+.btns {
+  position: fixed;
+  bottom: 40rpx;
+  right: 50%;
+  transform: translateX(50%);
+  display: flex;
+  justify-content: space-around;
+	align-items: center;
+  color: #fff;
+  width: 90%;
+  height: 70rpx;
+
+	.save,
+	.del {
+		width: 250rpx;
+		height: 100%;
+		border-radius: 20px;
+		font-size: 28rpx;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.save {
+		background-color: #1490eb;
+	}
+
+	.del {
+		background-color: #e1001b;
+	}
+}
+
+
+.nav-bar {
+	padding-top: 0 !important;
+}
+
+.popup-form {
+	padding: 20rpx;
+}
+
+.value-class {
+  flex: none !important;
+}

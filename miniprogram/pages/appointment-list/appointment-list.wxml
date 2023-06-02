@@ -1,0 +1,29 @@
+<!--pages/appointment-list/appointment-list.wxml-->
+<view class="appointment-main">
+	<!-- <van-dropdown-menu>
+		<van-dropdown-item value="{{ value1 }}" options="{{ option1 }}" />
+  <van-dropdown-item value="{{ value2 }}" options="{{ option2 }}" />
+	</van-dropdown-menu> -->
+
+	<view class="list">
+		<block wx:for="{{list}}" wx:key="_id">
+			<view class="list-item">
+				<view class="project-name">
+					{{ item.shopInfo.shopName }}
+					<view class="cancel" wx:if="{{item.status}}">用户已取消</view>
+				</view>
+
+				<view class="detail">
+					<van-cell-group>
+						<van-field value="输入框已禁用" label="用户名:" readonly label-class="label" input-class="input-style" value="{{ item.userInfo.nickName }}" />
+						<van-field value="输入框已禁用" label="用户手机号:" readonly label-class="label" input-class="input-style" value="{{ item.userInfo.phoneNumber }}" bindtap="onOpenPhone" data-itemData="{{ item }}"/>
+						<!-- <van-field value="输入框已禁用" label="用户地址:" readonly label-class="label" input-class="input-style" value="{{ item.userInfo.address }}" /> -->
+						<van-field value="输入框已禁用" label="预约项目:" readonly label-class="label" input-class="input-style" value="{{ item.pInfo.projectName }}" />
+						<van-field value="输入框已禁用" label="预约时间:" readonly label-class="label" input-class="input-style" value="{{ item.appointmentTime }}" />
+						<van-field value="输入框已禁用" label="发型师:" readonly label-class="label" input-class="input-style" value="{{ item.hInfo.hairstylistName }}" />
+					</van-cell-group>
+				</view>
+			</view>
+		</block>
+	</view>
+</view>

@@ -1,0 +1,71 @@
+{
+	"setting": {
+		"compileHotReLoad": true,
+		"urlCheck": true
+	},
+	"condition": {
+		"miniprogram": {
+			"list": [
+				{
+					"name": "",
+					"pathName": "pages/login/login",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/index/index",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/appointment-list/appointment-list",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/image-manage/index",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/shop-manage/index/index",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/shop-manage/edit/edit",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/shop-manage/edit/edit",
+					"query": "id=93e4b6a0646a232f0d5c74085ef8a726",
+					"launchMode": "default",
+					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/works-manage/works-manage",
+					"query": "",
+					"launchMode": "default",
+					"scene": null
+				}
+			]
+		}
+	},
+	"description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+	"projectname": "hairstyle-admin-mp",
+	"libVersion": "2.31.1"
+}

@@ -1,0 +1,35 @@
+<!--pages/index/index.wxml-->
+<view class="main-admin">
+	<view class="admin-info admin-bg">
+		<van-image
+			round
+			width="120rpx"
+			height="120rpx"
+			src="{{ avatar }}"
+		/>
+
+		<view class="info">
+			<view class="nickname">你好，{{ nickName }}</view>
+		</view>
+	</view>
+
+	<view class="content">
+		<van-cell-group inset>
+			<van-cell title="预约记录" link-type="navigateTo" is-link icon="todo-list-o" url="/pages/appointment-list/appointment-list"/>
+		</van-cell-group>
+		<view style="margin: 30rpx 0;"></view>
+		<van-cell-group inset title="功能管理" wx:if="{{ isAdmin }}">
+			<van-cell title="首页图片管理" link-type="navigateTo" is-link icon="photo-o" url="/pages/image-manage/index"/>
+			<van-cell title="门店管理" link-type="navigateTo" is-link icon="shop-o" url="/pages/shop-manage/index/index"/>
+			<!-- <van-cell title="发型师管理" link-type="navigateTo" is-link icon="manager-o"/> -->
+			<van-cell title="师傅作品管理" link-type="navigateTo" is-link icon="photo-o" url="/pages/works-manage/works-manage"/>
+			<van-cell title="推送管理" link-type="navigateTo" is-link icon="guide-o" url="/pages/publish-manage/publish-manage"/>
+		</van-cell-group>
+		<!-- <view style="margin: 30rpx 0;"></view>
+		<van-cell-group inset>
+			<van-cell title="点我累加推送次数" icon="star" bindtap="onAddPush"/>
+		</van-cell-group> -->
+	</view>
+
+	<view class="login-out" bindtap="onLoginOut">退出登录</view>
+</view>

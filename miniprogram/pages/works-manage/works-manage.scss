@@ -1,0 +1,58 @@
+/* pages/works-manage/works-manage.wxss */
+
+.main {
+	padding: 20rpx;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		.list {
+			width: 100%;
+			margin-bottom: 20rpx;
+			.item {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				border-bottom: 1px solid #e8eaee;
+				padding: 10rpx;
+				box-sizing: border-box;
+
+				&.project {
+					padding: 20rpx;
+				}
+				
+				.image {
+					margin-right: 10px;
+				}
+
+				.name {
+					color: #000;
+					font-size: 30rpx;
+					font-weight: 500;
+				}
+
+				.price {
+					margin-left: 10px;
+					color: red;
+					font-weight: 500;
+				}
+
+				.control {
+					margin-left: auto;
+					display: flex;
+					justify-content: space-between;
+				}
+			}
+		}
+	}
+}
+
+.nav-bar {
+	padding-top: 0 !important;
+}
+
+.popup-form {
+	padding: 20rpx;
+}

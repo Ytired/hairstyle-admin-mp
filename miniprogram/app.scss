@@ -1,0 +1,47 @@
+/**app.wxss**/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+} 
+
+button {
+  background: initial;
+}
+
+button:focus{
+  outline: 0;
+}
+
+button::after{
+  border: none;
+}
+
+
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.label {
+	position: relative;
+	font-size: 30rpx;
+	font-weight: 500;
+	padding-left: 20rpx;
+	line-height: 1;
+	margin: 30rpx 0;
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 8rpx;
+		height: 100%;
+		background-color: #39a1ff;
+		border-radius: 25%;
+	}
+}
