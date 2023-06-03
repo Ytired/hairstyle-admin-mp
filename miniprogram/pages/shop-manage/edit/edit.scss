@@ -112,3 +112,47 @@
 .value-class {
   flex: none !important;
 }
+
+.calendar {
+	.label {
+		margin-top: 20rpx;
+	}
+
+	.wrapper {
+		display: flex;
+	}
+	
+	.time-list {
+		margin-left: 4px;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		
+		.time-item {
+			width: 65px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 1px solid #e8e8e8;
+			margin-bottom: 8px;
+			font-weight: 500;
+			font-size: 14px;
+			border-radius: 6px;
+
+			&.active {
+				color: #fff;
+				background-color: #000;
+			}
+
+		}
+	}
+}
+
+.sidebar {
+	width: 100px !important;
+}
+
+page {
+	--sidebar-padding: 10px 6px 10px 8px;
+}

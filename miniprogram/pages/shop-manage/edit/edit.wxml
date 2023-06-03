@@ -1,68 +1,24 @@
 <!--pages/shop-manage/edit/edit.wxml-->
+<wxs module="utils">
+	function join(obj) {
+		return obj.year + '-' + obj.month + '-' + obj.date
+	}
+	module.exports = {
+		join: join
+	}
+</wxs>
+
 <view class="shop-edit">
 	<view class="form">
 		<van-cell-group>
-			<van-field
-				model:value="{{shopName}}"
-				label="门店名"
-				placeholder="请输入门店名"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ shopDesc }}"
-				label="门店描述"
-				placeholder="请输入门店描述"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ openingHours }}"
-				label="营业时间"
-				placeholder="请输入营业时间"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ phoneNumber }}"
-				label="门店电话"
-				type="number"
-				placeholder="请输入门店电话"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ longitude }}"
-				label="地图经度"
-				type="number"
-				placeholder="请输入经度"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ latitude }}"
-				label="地图纬度"
-				type="number"
-				placeholder="请输入纬度"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ address }}"
-				required
-				label="门店地址"
-				placeholder="请点击选择"
-				clickable
-				readonly
-				bindtap="showAddress"
-			/>
-			<van-field
-				model:value="{{ detailAddress }}"
-				placeholder="请输入详细地址"
-				type="textarea"
-				autosize
-				clearable
-			/>
+			<van-field model:value="{{shopName}}" label="门店名" placeholder="请输入门店名" clearable required />
+			<van-field model:value="{{ shopDesc }}" label="门店描述" placeholder="请输入门店描述" clearable required />
+			<van-field model:value="{{ openingHours }}" label="营业时间" placeholder="请输入营业时间" clearable required />
+			<van-field model:value="{{ phoneNumber }}" label="门店电话" type="number" placeholder="请输入门店电话" clearable required />
+			<van-field model:value="{{ longitude }}" label="地图经度" type="number" placeholder="请输入经度" clearable required />
+			<van-field model:value="{{ latitude }}" label="地图纬度" type="number" placeholder="请输入纬度" clearable required />
+			<van-field model:value="{{ address }}" required label="门店地址" placeholder="请点击选择" clickable readonly bindtap="showAddress" />
+			<van-field model:value="{{ detailAddress }}" placeholder="请输入详细地址" type="textarea" autosize clearable />
 			<view class="uploaderBox">
 				<text>店铺图片</text>
 				<van-uploader file-list="{{ imgList }}" deletable bind:after-read="afterRead" bind:delete="onDeleteShopImg" />
@@ -74,19 +30,12 @@
 						<view class="list">
 							<block wx:for="{{ hairstylist }}" wx:key="_id">
 								<view class="item">
-									<van-image
-										width="70rpx"
-										height="70rpx"
-										radius="10rpx"
-										fit="fill"
-										src="{{ item.url }}"
-										custom-class="image"
-									/>
+									<van-image width="70rpx" height="70rpx" radius="10rpx" fit="fill" src="{{ item.url }}" custom-class="image" />
 									<text class="name">{{ item.hairstylistName }}</text>
 
 									<view class="control">
-										<van-icon name="more-o" color="#1490eb" size="60rpx" bindtap="onDetailUser" data-info="{{ item }}"/>
-										<van-icon name="close" color="red" size="60rpx" bindtap="onDeleteUser" data-id="{{ item._id }}"/>
+										<van-icon name="more-o" color="#1490eb" size="60rpx" bindtap="onDetailUser" data-info="{{ item }}" />
+										<van-icon name="close" color="red" size="60rpx" bindtap="onDeleteUser" data-id="{{ item._id }}" />
 									</view>
 								</view>
 							</block>
@@ -103,8 +52,8 @@
 									<text class="name">{{ item.projectName }}</text>
 									<text class="price">￥{{ item.projectPrice }}</text>
 									<view class="control">
-										<van-icon name="more-o" color="#1490eb" size="60rpx" bindtap="onProjectDetail" data-info="{{ item }}"/>
-										<van-icon name="close" color="red" size="60rpx" bindtap="onDelProject" data-id="{{ item._id }}"/>
+										<van-icon name="more-o" color="#1490eb" size="60rpx" bindtap="onProjectDetail" data-info="{{ item }}" />
+										<van-icon name="close" color="red" size="60rpx" bindtap="onDelProject" data-id="{{ item._id }}" />
 									</view>
 								</view>
 							</block>
@@ -133,14 +82,7 @@
 
 <!-- 理发师弹窗 -->
 <van-popup show="{{showHairstylist}}" round position="bottom" bind:close="onHairstylistClose" bind:before-enter="onPopupShow">
-	<van-nav-bar
-		title="发型师"
-		left-text="取消"
-		right-text="保存"
-		bind:click-left="onHairstylistClose"
-		bind:click-right="onClickHairstylist"
-		custom-class="nav-bar"
-	/>
+	<van-nav-bar title="发型师" left-text="取消" right-text="保存" bind:click-left="onHairstylistClose" bind:click-right="onClickHairstylist" custom-class="nav-bar" />
 
 	<view class="popup-form">
 		<van-cell-group>
@@ -148,38 +90,13 @@
 				<text>头像</text>
 				<van-uploader file-list="{{ hairstylistImgs }}" deletable bind:after-read="afterRead" bind:delete="onDeleteAvatar" />
 			</view>
-			<van-field
-				model:value="{{ hairstylistName }}"
-				label="姓名"
-				placeholder="请输入姓名"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ hairstylistExp }}"
-				label="从业年限"
-				placeholder="请输入从业年限"
-				type="number"
-				clearable
-				required
-			>
+			<van-field model:value="{{ hairstylistName }}" label="姓名" placeholder="请输入姓名" clearable required />
+			<van-field model:value="{{ hairstylistExp }}" label="从业年限" placeholder="请输入从业年限" type="number" clearable required>
 				<text slot="button">单位：年</text>
 			</van-field>
-			<van-field
-				model:value="{{ account }}"
-				label="账号"
-				placeholder="请输入登录账号，密码: 123456"
-				type="number"
-				clearable
-				required
-			>
+			<van-field model:value="{{ account }}" label="账号" placeholder="请输入登录账号，密码: 123456" type="number" clearable required>
 			</van-field>
-			<van-field
-				model:value="{{ position }}"
-				label="职位"
-				placeholder="请输入职位"
-				clearable
-			/>
+			<van-field model:value="{{ position }}" label="职位" placeholder="请输入职位" clearable />
 			<!-- <van-field
 				model:value="{{ password }}"
 				label="密码"
@@ -193,32 +110,35 @@
 				<van-collapse-item title="关联理发项目" name="3">
 					<van-checkbox-group wx:if="{{checkboxList.length}}" value="{{ checkboxValueList }}" bind:change="onChange">
 						<van-cell-group>
-							<van-cell
-								wx:for="{{ checkboxList }}"
-								wx:key="index"
-								title="{{ item.projectName }}"
-								value-class="value-class"
-								clickable
-								data-index="{{ index }}"
-								bind:click="toggle"
-							>
-								<van-checkbox
-									catchtap="noop"
-									data-index="{{ index }}"
-									class="checkboxes-{{ index }}"
-									name="{{ item._id }}"
-								/>
+							<van-cell wx:for="{{ checkboxList }}" wx:key="index" title="{{ item.projectName }}" value-class="value-class" clickable data-index="{{ index }}" bind:click="toggle">
+								<van-checkbox catchtap="noop" data-index="{{ index }}" class="checkboxes-{{ index }}" name="{{ item._id }}" />
 							</van-cell>
 						</van-cell-group>
 					</van-checkbox-group>
 
-					<van-divider
-						wx:else
-						contentPosition="center"
-						customStyle="color: #1989fa; border-color: #1989fa; font-size: 12px;"
-					>
+					<van-divider wx:else contentPosition="center" customStyle="color: #1989fa; border-color: #1989fa; font-size: 12px;">
 						请先添加项目再关联
 					</van-divider>
+				</van-collapse-item>
+				<van-collapse-item title="排班" name="4">
+					<!-- 日历 -->
+					<view class="calendar">
+						<calendar id="calendar" config="{{calendarConfig}}" bind:takeoverTap="takeoverTap" bindtap="takeoverTap"/>
+
+						<view class="label">选择时间段</view>
+						<view class="wrapper" wx:if="{{ dates.length }}">
+							<van-sidebar active-key="{{ activeKey }}" custom-class="sidebar" bind:change="onSidebarChange">
+								<block wx:for="{{ dates }}" wx:key="index">
+									<van-sidebar-item title="{{ utils.join(item) }}" />
+								</block>
+							</van-sidebar>
+							<view class="time-list">
+								<block wx:for="{{timeList}}" wx:key="*this">
+									<view class="time-item {{item === times[activeKey][dates[activeKey].dateTimeStr][index] ? 'active' : ''}}" data-index="{{ index }}" bindtap="onTimeTap">{{item}}</view>
+								</block>
+							</view>
+						</view>
+					</view>
 				</van-collapse-item>
 			</van-collapse>
 		</van-cell-group>
@@ -227,58 +147,19 @@
 
 <!-- 项目弹窗 -->
 <van-popup show="{{showProject}}" round position="bottom" bind:close="onProjectClose">
-	<van-nav-bar
-		title="项目"
-		left-text="取消"
-		right-text="保存"
-		bind:click-left="onProjectClose"
-		bind:click-right="onClickProject"
-		custom-class="nav-bar"
-	/>
+	<van-nav-bar title="项目" left-text="取消" right-text="保存" bind:click-left="onProjectClose" bind:click-right="onClickProject" custom-class="nav-bar" />
 
 	<view class="popup-form">
 		<van-cell-group>
-			<van-field
-				model:value="{{ projectName }}"
-				label="项目名"
-				placeholder="请输入项目名"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ projectCategory }}"
-				label="项目分类"
-				placeholder="请输入项目分类"
-				clearable
-				required
-			/>
-			<van-field
-				model:value="{{ projectPrice }}"
-				label="项目价格"
-				placeholder="请输入项目价格"
-				type="digit"
-				clearable
-				required
-			>
+			<van-field model:value="{{ projectName }}" label="项目名" placeholder="请输入项目名" clearable required />
+			<van-field model:value="{{ projectCategory }}" label="项目分类" placeholder="请输入项目分类" clearable required />
+			<van-field model:value="{{ projectPrice }}" label="项目价格" placeholder="请输入项目价格" type="digit" clearable required>
 				<text slot="button">单位：元</text>
 			</van-field>
-			<van-field
-				model:value="{{ projectTime }}"
-				label="项目预计时间"
-				placeholder="请输入项目预计完成时间"
-				type="number"
-				clearable
-				required
-			>
-			<text slot="button">单位：分钟</text>
-			</van-field>	
-			<van-field
-				model:value="{{ projectDesc }}"
-				label="项目描述"
-				placeholder="请输入项目描述"
-				clearable
-				required
-			/>
+			<van-field model:value="{{ projectTime }}" label="项目预计时间" placeholder="请输入项目预计完成时间" type="number" clearable required>
+				<text slot="button">单位：分钟</text>
+			</van-field>
+			<van-field model:value="{{ projectDesc }}" label="项目描述" placeholder="请输入项目描述" clearable required />
 
 			<!-- <van-collapse value="{{ activeNames }}" bind:change="onCollapseChange">
 				<van-collapse-item title="关联理发师" name="4">

@@ -16,6 +16,9 @@
 		"van-checkbox": "@vant/weapp/checkbox/index",
 		"van-checkbox-group": "@vant/weapp/checkbox-group/index",
 		"van-empty": "@vant/weapp/empty/index",
-		"van-divider": "@vant/weapp/divider/index"
+		"van-divider": "@vant/weapp/divider/index",
+		"calendar": "../../../components/calendar/index",
+		"van-sidebar": "@vant/weapp/sidebar/index",
+		"van-sidebar-item": "@vant/weapp/sidebar-item/index"
 	}
 }

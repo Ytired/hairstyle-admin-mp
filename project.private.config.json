@@ -61,6 +61,13 @@
 					"query": "",
 					"launchMode": "default",
 					"scene": null
+				},
+				{
+					"name": "",
+					"pathName": "pages/shop-manage/edit/edit",
+					"query": "id=93e4b6a0646a232f0d5c74085ef8a726",
+					"launchMode": "default",
+					"scene": null
 				}
 			]
 		}
