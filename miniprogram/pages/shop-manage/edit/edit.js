@@ -72,8 +72,8 @@ Page({
     // 排班
     activeKey: 0,
     timeList: [
-      "09:00:00",
-      "10:00:00",
+			"09:00:00",
+			"10:00:00",
       "11:00:00",
       "12:00:00",
       "13:00:00",
@@ -129,8 +129,11 @@ Page({
 					[dateTimeStr]: [...time[dateTimeStr]]
 				})
 			} else {
+				const times = [...this.data.timeList]
+				times[0] = null;
+				times[1] = null;
 				newTimes.push({
-					[dateTimeStr]: [...this.data.timeList]
+					[dateTimeStr]: times
 				})
 			}
 		}
@@ -756,7 +759,7 @@ Page({
       latitude: this.data.latitude,
       phoneNumber: this.data.phoneNumber,
     };
-    const file = this.data.imgList.pop();
+    const file = this.data.imgList[0];
     if (!file.url.includes("/images")) {
       const res = await this.uploadFilePromise(file.fileName, file);
       data.url = res.fileID;
@@ -767,7 +770,7 @@ Page({
         createTime: db.serverDate(),
       },
       success: (res) => {
-        const imgList = data.url ? [{ url: data.url }] : [file];
+				const imgList = data.url ? [{ url: data.url }] : [file];
         this.setData({
           id: res._id,
           imgList: getUrl(imgList),
@@ -801,7 +804,7 @@ Page({
       latitude: this.data.latitude,
       phoneNumber: this.data.phoneNumber,
     };
-    const file = this.data.imgList.pop();
+    const file = this.data.imgList[0];
     if (!file.url.includes("/images")) {
       const res = await this.uploadFilePromise(file.fileName, file);
       data.url = res.fileID;

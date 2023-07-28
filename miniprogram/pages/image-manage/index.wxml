@@ -1,7 +1,7 @@
 <!--pages/image-manage/index.wxml-->
 <view class="image-manage">
 	<view class="label">图片</view>
-	<van-uploader file-list="{{ imgList }}" deletable bind:after-read="afterRead" bind:delete="onDelete" preview-size="100px"/>
+	<van-uploader multiple="{{true}}" file-list="{{ imgList }}" deletable bind:after-read="afterRead" bind:delete="onDelete" preview-size="100px"/>
 	<view class="btn">
 		<van-button type="primary" block bind:click="onBtnTap">上传图片</van-button>
 	</view>
